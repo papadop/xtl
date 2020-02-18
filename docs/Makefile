@@ -103,7 +103,7 @@ tex-generation:
 	(cd $(BUILDDIR)/latex/;\
 	for i in *.svg; do\
 		name=`basename $$i .svg`;\
-		${INKSCAPE} -D -z --file=$$i --export-pdf=$$name-svg.pdf --export-latex; \
+		${INKSCAPE} -D -z --export-type=pdf --export-latex $$i -o $$name-svg.pdf; \
 	done)
 
 latex: tex-generation
